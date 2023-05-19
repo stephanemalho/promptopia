@@ -1,6 +1,6 @@
-import { schema , model, models } from 'mongoose';
+import { Schema , model, models } from 'mongoose';
 
-const userSchema = new schema({
+const userSchema = new Schema({
   email: {
     type: String,
     unique: [true, 'Email already exists'],
@@ -9,9 +9,9 @@ const userSchema = new schema({
   username: {
     type: String,
     required: [true, 'Username is required!'],
-    match: [/^(?=.{8,20}$)(?![_.])(?!.*[_.]{2})[a-zA-Z0-9._]+(?<![_.])$/, "Username invalid, it should contain 8-20 alphanumeric letters and be unique!"]
+    match: [/^(?=.{8,20}$)(?![.])(?!.*[_.]{2})[a-zA-Z0-9.À-ÖØ-öø-ÿ]+(?<![.])$/, "Username invalid, it should contain 8-20 alphanumeric letters and be unique!"]
   },
-  image : {
+  image: {
     type: String,
   }
 });
@@ -19,4 +19,3 @@ const userSchema = new schema({
 const User = models.User || model('User', userSchema);
 
 export default User; 
-//1h34m
