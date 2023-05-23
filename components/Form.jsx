@@ -24,14 +24,14 @@ const Form = ({
           className="w-full h-40 p-5 rounded-sm bg-gray-100 border border-gray-300 resize-none focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent"
           />
         </label>
-        <label htmlFor='tag'><span className="font-satoshi font-semibold text-bold text-gray-700">"Tag{" "}<span>(#idea #research #development)</span></span>
+        <label htmlFor='tag'><span className="font-satoshi font-semibold text-bold text-gray-700">"Tag{" "}<span>(idea research development)</span></span>
         <input
           type='text'
           name='tag'
           id='tag'
           value={post.tag}
           onChange={(e) => setPost({ ...post, tag: e.target.value })}
-          placeholder='#tag'
+          placeholder='write one ore more tags without hash'
           required
           className="w-full p-2 rounded-sm bg-gray-100 border border-gray-300 resize-none focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent"
           />
